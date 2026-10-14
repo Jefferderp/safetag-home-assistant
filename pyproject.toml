@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "safetag-gateway"
-version = "1.0.0"
+version = "1.0.1"
 description = "Read-only Safetag GPS API gateway and Home Assistant integration"
 requires-python = ">=3.13"
 license = "MIT"

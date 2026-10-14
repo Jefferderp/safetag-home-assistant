@@ -1,7 +1,6 @@
 """GPS location without upstream names or identifiers in attributes."""
 
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.device_tracker.config_entry import TrackerEntity
+from homeassistant.components.device_tracker import SourceType, TrackerEntity
 
 from .entity import SafetagEntity, discover
 

@@ -81,7 +81,7 @@ class SafetagCoordinator(DataUpdateCoordinator):
             except SafetagRateLimitError as err:
                 retry_after = err.retry_after
             except UpdateFailed as err:
-                retry_after = getattr(err, "retry_after", 0)
+                retry_after = getattr(err, "retry_after", None) or 0
             except Exception:
                 # Transport, schema, and unexpected failures are all sanitized.
                 pass
@@ -94,5 +94,9 @@ class SafetagCoordinator(DataUpdateCoordinator):
     async def stop(self):
         if self.stream_task is not None:
             self.stream_task.cancel()
-            with suppress(asyncio.CancelledError):
-                await self.stream_task
+            try:
+                with suppress(asyncio.CancelledError):
+                    await self.stream_task
+            except Exception:
+                # A task that already failed must not block reload or expose raw errors.
+                _LOGGER.warning("Safetag stream task failed before shutdown")

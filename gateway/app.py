@@ -110,7 +110,7 @@ def create_app(*, token=None, store=None, start_worker=True):
 
     app = FastAPI(
         title="Safetag telemetry gateway",
-        version="1.0.0",
+        version="1.0.1",
         docs_url=None,
         redoc_url=None,
         openapi_url=None,

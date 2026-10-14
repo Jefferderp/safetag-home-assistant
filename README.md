@@ -132,6 +132,20 @@ cache are in memory; no location history is persisted. API access logs are off.
   Home Assistant Recorder may store GPS and sensor history; protect backups or
   exclude these entities from Recorder if you do not want history.
 
+## Version 1.0.1
+
+- Fix reconnect task failure when Home Assistant provides `retry_after=None`
+  after a failed reconnect snapshot. Numeric server retry delays remain honored.
+- Allow unload/reload to finish even if the background task already failed,
+  without logging upstream exception details.
+- Use the public `TrackerEntity` import ahead of HA Core 2027.6.
+- Entity and device identifiers are unchanged.
+
+If upgrading from 1.0.0 after a stuck connection, download the update in HACS
+(or use Redownload if necessary), then **restart Home Assistant Core**. Reloading
+the old integration can fail and does not load the updated Python modules.
+Do not delete the integration or rotate a working API key.
+
 ## Troubleshooting
 
 - **Invalid authentication:** verify the email/key, expiry and API entitlement;
