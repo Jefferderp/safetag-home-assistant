@@ -164,7 +164,7 @@ Do not delete the integration or rotate a working API key.
 
 ```bash
 python3.13 -m venv .venv
-.venv/bin/python -m pip install -e '.[test]' -c tests/constraints.txt
+.venv/bin/python -m pip install '.[test]' -c tests/constraints.txt
 .venv/bin/python -m pytest -q
 .venv/bin/ruff check .
 .venv/bin/python -m compileall -q custom_components gateway
