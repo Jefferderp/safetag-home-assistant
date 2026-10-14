@@ -1,0 +1,84 @@
+{
+  "title": "Safetag",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Safetag",
+        "description": "Enter the Safetag account email and supported API key. These credentials are sent only to the official Safetag API.",
+        "data": {
+          "username": "Account email",
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Replace Safetag API key",
+        "description": "Authentication failed. Enter a valid API key for the existing account.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reconfigure": {
+        "title": "Replace Safetag API key",
+        "description": "Update the API key for this existing account without changing tracker identities.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid account email or API key.",
+      "cannot_connect": "Unable to connect to Safetag. Try again later.",
+      "invalid_response": "Safetag returned an unsupported tracker response.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Authentication updated successfully.",
+      "reconfigure_successful": "API key updated successfully."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "speed_mph": {
+        "name": "Speed"
+      },
+      "course": {
+        "name": "Heading"
+      },
+      "battery_level": {
+        "name": "Battery level (0–6)"
+      },
+      "signal_percent": {
+        "name": "Signal"
+      },
+      "external_voltage": {
+        "name": "External voltage"
+      },
+      "last_updated": {
+        "name": "Location updated"
+      },
+      "status_last_updated": {
+        "name": "Status updated"
+      },
+      "model": {
+        "name": "Model code"
+      },
+      "product": {
+        "name": "Product code"
+      }
+    },
+    "binary_sensor": {
+      "charging": {
+        "name": "Charging"
+      },
+      "relay": {
+        "name": "Engine cut relay"
+      }
+    },
+    "device_tracker": {
+      "location": {
+        "name": "Location"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "domain": "safetag",
+  "name": "Safetag",
+  "codeowners": [
+    "@Jefferderp"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/Jefferderp/safetag-home-assistant",
+  "issue_tracker": "https://github.com/Jefferderp/safetag-home-assistant/issues",
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "requirements": [],
+  "version": "1.0.0"
+}
